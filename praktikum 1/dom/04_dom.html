@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Belajar Javascript</title>
+	<script>
+	function ubahTextJudul() {
+		document.getElementsByTagName("h2")[0].innerHTML = "Document Object Model";
+	}
+	function ubahGambar() {
+		document.getElementById("logo").src = "images/html_logo.png";
+	}
+	function ubahAttribut() {
+		document.getElementsByTagName("h2")[0].setAttribute("class", "judul");
+		document.getElementById("logo").setAttribute("width",  300);
+		document.getElementById("logo").setAttribute("height", 300);
+	}
+	function ubahElemenJudulMenjadiMerah() {
+		document.getElementsByClassName("judul")[0].style.color = "red";
+	}
+	</script>
+</head>
+<body>
+	<h2>Hypertext Markup Language</h2>
+	<img id="logo" src="images/picture.jpg" alt="gambar">
+	<button id="bta01" type="button" onclick="ubahTextJudul()">Ubah inner HTML</button>
+	<button id="btn02" type="button" onclick="ubahGambar()">Ubah nilai atribut image</button>
+	<button id="btn03" type="button" onclick="ubahAttribut()">Set nilai atribut baru</button>
+	<button id="btn04" type="button" onclick="ubahElemenJudulMenjadiMerah()">Ubah style elemen</button>
+</body>
+</html>

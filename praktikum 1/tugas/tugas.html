@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Tambah Data Produk</title>
+    <script src="script.js"></script> <!-- Hubungkan file JS eksternal -->
+</head>
+<body>
+
+    <h2>Form Tambah Data Produk</h2>
+    <form name="productForm" action="#" onsubmit="return validateForm()">
+        <label for="nama_produk">Nama Produk:</label><br>
+        <input type="text" id="nama_produk" name="nama_produk"><br><br>
+
+        <label for="deskripsi_produk">Deskripsi:</label><br>
+        <textarea id="deskripsi_produk" name="deskripsi_produk"></textarea><br><br>
+
+        <label for="kategori">Kategori:</label><br>
+        <select id="kategori" name="kategori" onchange="setSubKategori()">
+            <option value="">--Pilih Kategori--</option>
+            <option value="Baju">Baju</option>
+            <option value="Elektronik">Elektronik</option>
+            <option value="Alat Tulis">Alat Tulis</option>
+        </select><br><br>
+
+        <label for="sub_kategori">Sub Kategori:</label><br>
+        <select id="sub_kategori" name="sub_kategori">
+            <option value="">--Pilih Sub Kategori--</option>
+        </select><br><br>
+
+        <label for="harga_satuan">Harga Satuan:</label><br>
+        <input type="text" id="harga_satuan" name="harga_satuan"><br><br>
+
+        <label>Grosir:</label><br>
+        <input type="radio" id="grosir_ya" name="grosir" value="Ya"> Ya<br>
+        <input type="radio" id="grosir_tidak" name="grosir" value="Tidak"> Tidak<br><br>
+
+        <label for="harga_grosir">Harga Grosir:</label><br>
+        <input type="text" id="harga_grosir" name="harga_grosir"><br><br>
+
+        <label>Jasa Kirim:</label><br>
+        <input type="checkbox" name="jasa_kirim" value="JNE"> JNE<br>
+        <input type="checkbox" name="jasa_kirim" value="TIKI"> TIKI<br>
+        <input type="checkbox" name="jasa_kirim" value="SiCepat"> SiCepat<br>
+        <input type="checkbox" name="jasa_kirim" value="Ninja Express"> Ninja Express<br>
+        <input type="checkbox" name="jasa_kirim" value="Wahana"> Wahana<br><br>
+
+        <label for="captcha">Captcha:</label><br>
+        <input type="text" id="captchaDisplay" name="captchaDisplay" readonly><br>
+        <input type="text" id="captcha" name="captcha"><br><br>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset" onclick="generateCaptcha()">
+    </form>
+
+</body>
+</html>
