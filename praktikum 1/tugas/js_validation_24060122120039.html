@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Tambah Data Produk</title>
+    <!-- Menyertakan stylesheet eksternal -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Menyertakan file JavaScript eksternal dengan atribut defer -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h2>Form Tambah Data Produk</h2>
+    <form id="productForm" onsubmit="return validateForm()">
+        <!-- Nama Produk -->
+        <div class="form-row">
+            <label for="productName">Nama Produk:</label>
+            <input type="text" id="productName" name="productName" minlength="5" maxlength="30" required>
+        </div>
+        <!-- Pesan error untuk Nama Produk -->
+        <div class="error-message" id="productNameError"></div>
+
+        <!-- Deskripsi Produk -->
+        <div class="form-row">
+            <label for="description">Deskripsi:</label>
+            <textarea id="description" name="description" minlength="5" maxlength="100" required></textarea>
+        </div>
+        <!-- Pesan error untuk Deskripsi -->
+        <div class="error-message" id="descriptionError"></div>
+
+        <!-- Kategori Produk -->
+        <div class="form-row">
+            <label for="category">Kategori:</label>
+            <select id="category" name="category" required>
+                <option value="">--Pilih Kategori--</option>
+                <option value="Baju">Baju</option>
+                <option value="Elektronik">Elektronik</option>
+                <option value="Alat Tulis">Alat Tulis</option>
+            </select>
+        </div>
+        <!-- Pesan error untuk Kategori -->
+        <div class="error-message" id="categoryError"></div>
+
+        <!-- Sub Kategori Produk -->
+        <div class="form-row">
+            <label for="subCategory">Sub Kategori:</label>
+            <select id="subCategory" name="subCategory" required>
+                <option value="">--Pilih Sub Kategori--</option>
+            </select>
+        </div>
+        <!-- Pesan error untuk Sub Kategori -->
+        <div class="error-message" id="subCategoryError"></div>
+
+        <!-- Harga Satuan -->
+        <div class="form-row">
+            <label for="price">Harga Satuan:</label>
+            <input type="number" id="price" name="price" required>
+        </div>
+        <!-- Pesan error untuk Harga Satuan -->
+        <div class="error-message" id="priceError"></div>
+
+        <!-- Grosir -->
+        <div class="form-row">
+            <label>Grosir:</label>
+            <input type="radio" id="grosirYes" name="grosir" value="Ya" required>Ya
+            <input type="radio" id="grosirNo" name="grosir" value="Tidak" required>Tidak
+        </div>
+        <!-- Pesan error untuk Grosir -->
+        <div class="error-message" id="grosirError"></div>
+
+        <!-- Harga Grosir -->
+        <div class="form-row">
+            <label for="wholesalePrice">Harga Grosir:</label>
+            <input type="number" id="wholesalePrice" name="wholesalePrice">
+        </div>
+        <!-- Pesan error untuk Harga Grosir -->
+        <div class="error-message" id="wholesalePriceError"></div>
+
+        <!-- Jasa Kirim -->
+        <div class="form-row">
+            <label>Jasa Kirim:</label><br>
+            <input type="checkbox" name="shipping" value="JNE">JNE
+            <input type="checkbox" name="shipping" value="TIKI">TIKI
+            <input type="checkbox" name="shipping" value="SiCepat">SiCepat
+            <input type="checkbox" name="shipping" value="Ninja Express">Ninja Express
+            <input type="checkbox" name="shipping" value="Wahana">Wahana
+        </div>
+        <!-- Pesan error untuk Jasa Kirim -->
+        <div class="error-message" id="shippingError"></div>
+
+        <!-- Captcha -->
+        <div class="form-row">
+            <label for="captcha">Captcha:</label>
+            <input type="text" id="captcha" name="captcha" maxlength="5" required>
+            <span id="captchaText"></span>
+        </div>
+        <!-- Pesan error untuk Captcha -->
+        <div class="error-message" id="captchaError"></div>
+
+        <!-- Tombol Submit dan Reset -->
+        <div class="form-buttons">
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </div>
+    </form>
+
+    <!-- Modal untuk menampilkan detail produk -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Detail Produk</h2>
+            <p id="productDetails"></p>
+        </div>
+    </div>
+</body>
+</html>
