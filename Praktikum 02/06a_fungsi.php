@@ -1,6 +1,6 @@
 <?php
-    // Nama : 
-    // NIM  : 
+    // Nama : Awang Pratama Putra Mulya
+    // NIM  : 24060122120039
     
     // FUNGSI 1 *************************************************
     echo '<br />FUNGSI 1: fungsi yang tidak mengembalikan nilai<br />';

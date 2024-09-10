@@ -1,6 +1,6 @@
 <?php
-    // Nama : 
-    // NIM  : 
+    // Nama : Awang Pratama Putra Mulya
+    // NIM  : 24060122120039
     
     // VARIABEL*************************************************
     //assign nilai ke variabel

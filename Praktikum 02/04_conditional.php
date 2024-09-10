@@ -1,6 +1,6 @@
 <?php
-    // Nama : 
-    // NIM  : 
+    // Nama : Awang Pratama Putra Mulya
+    // NIM  : 24060122120039 
     
     // SINGLE IF ELSE********************************************
     echo '<br />SINGLE IF-ELSE<br />';
@@ -56,6 +56,20 @@
 
     echo '<br />SWITCH TANPA BREAK<br />';
     // TODO SWITCH TANPA BREAK
-
+    $nilai = 'A';
+    switch ($nilai) {
+        case "A":
+            echo "Sangat Baik. <br />";
+        case "B":
+            echo "Baik. <br />";
+        case "C":
+            echo "Cukup. <br />";
+        case "D":
+            echo "Kurang. <br />";
+        case "E":
+            echo "Tidak Lulus. <br />";
+        default:
+            echo "Invalid nilai! <br />";
+    }
     
 ?>

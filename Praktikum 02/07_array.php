@@ -1,6 +1,6 @@
 <?php
-    // Nama : 
-    // NIM  : 
+    // Nama : Awang Pratama Putra Mulya
+    // NIM  : 24060122120039 
     
     // NUMERIC ARRAY********************************************
     echo '<br />NUMERIC ARRAY<br />';
@@ -29,10 +29,25 @@
     $disc = array(60,20,50,90,0,70,10,30,80,40);
 
     // TODO urutkan array disc tersebut dengan menggunakan ksort()
+    echo '<br />Urutkan array disc dengan ksort():<br />';
+    ksort($disc); // Mengurutkan berdasarkan key
+    foreach($disc as $key => $value) {
+        echo 'Key '.$key.' => '.$value.'<br />';
+    }
 
     // TODO urutkan array disc tersebut dengan menggunakan asort()
+    echo '<br />Urutkan array disc dengan asort():<br />';
+    asort($disc); // Mengurutkan berdasarkan value dengan menjaga key
+    foreach($disc as $key => $value) {
+        echo 'Key '.$key.' => '.$value.'<br />';
+    }
 
     // TODO urutkan array disc tersebut dengan menggunakan sort()
+    echo '<br />Urutkan array disc dengan sort():<br />';
+    sort($disc); // Mengurutkan berdasarkan value dan reset key
+    foreach($disc as $value) {
+        echo $value.'<br />';
+    }
 
     // ASSOSIATIVE ARRAY********************************************
     echo '<br />ASSOSIATIVE ARRAY<br />';
@@ -55,9 +70,24 @@
 
     // Percobaan 2 =============================================     
     // TODO urutkan array bulan tersebut dengan menggunakan ksort()
+    echo '<br />Urutkan array bulan dengan ksort():<br />';
+    ksort($bulan); // Mengurutkan berdasarkan key
+    foreach($bulan as $kode_bulan => $nama_bulan) {
+        echo 'Kode bulan "'.$kode_bulan.'" => "'.$nama_bulan.'"<br />';
+    }
 
     // TODO urutkan array bulan tersebut dengan menggunakan asort()
+    echo '<br />Urutkan array bulan dengan asort():<br />';
+    asort($bulan); // Mengurutkan berdasarkan value (nama bulan)
+    foreach($bulan as $kode_bulan => $nama_bulan) {
+        echo 'Kode bulan "'.$kode_bulan.'" => "'.$nama_bulan.'"<br />';
+    }
 
     // TODO urutkan array bulan tersebut dengan menggunakan sort()
+    echo '<br />Urutkan array bulan dengan sort():<br />';
+    sort($bulan); // Mengurutkan berdasarkan value dan reset key
+    foreach($bulan as $nama_bulan) {
+        echo 'Bulan: '.$nama_bulan.'<br />';
+    }
 
 ?>

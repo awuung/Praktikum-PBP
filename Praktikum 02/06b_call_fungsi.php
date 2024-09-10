@@ -1,6 +1,6 @@
 <?php
-    // Nama : 
-    // NIM  : 
+    // Nama : Awang Pratama Putra Mulya
+    // NIM  : 24060122120039 
     
     require_once("06a_fungsi.php");
     //pemanggilan fungsi hitung_diskon

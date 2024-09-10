@@ -1,6 +1,6 @@
 <?php
-    // Nama : 
-    // NIM  : 
+    // Nama : Awang Pratama Putra Mulya
+    // NIM  : 24060122120039 
     
     define("PWI", "Permograman Web dan Internet ");
     echo 'Hari ini sedang praktikum '.PWI.'<br />';
