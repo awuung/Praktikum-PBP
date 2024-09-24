@@ -11,7 +11,9 @@ session_start();
 // TODO 2 : Lakukan koneksi dengan database
 require_once('lib/db_login.php');
 
-// Memeriksa apakah user sudah submit form
+// Variabel untuk menampung pesan error login
+$error_login = '';
+
 if (isset($_POST['submit'])) {
     $valid = TRUE;
 
@@ -48,7 +50,7 @@ if (isset($_POST['submit'])) {
                 header('Location: view_customer.php');
                 exit;
             } else {
-                echo '<span class="error">Combination of email and password are not correct.</span>';
+                $error_login = 'Email dan Password anda salah.';
             }
         }
 
@@ -59,26 +61,33 @@ if (isset($_POST['submit'])) {
 ?>
 <?php include('./header.php') ?>
 <br>
-<div class="container mt-5">
-    <div class="card">
-        <div class="card-header text-center">
+<div class="container mt-5 d-flex justify-content-center">
+    <div class="card shadow-lg" style="width: 28rem;">
+        <div class="card-header text-center bg-primary text-white">
             <h4>Login Form</h4>
         </div>
         <div class="card-body">
             <form method="POST" autocomplete="on" action="<?= htmlspecialchars($_SERVER['PHP_SELF']) ?>">
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" class="form-control" id="email" name="email" value="<?php if (isset($email)) echo $email; ?>">
+                <div class="form-group mb-3">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" class="form-control" id="email" name="email" value="<?php if (isset($email)) echo $email; ?>" placeholder="Enter your email">
                     <div class="text-danger"><?php if (isset($error_email)) echo $error_email ?></div>
                 </div>
-                <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input type="password" class="form-control" id="password" name="password" value="">
+                <div class="form-group mb-3">
+                    <label for="password" class="form-label">Password:</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password">
                     <div class="text-danger"><?php if (isset($error_password)) echo $error_password ?></div>
                 </div>
-                <br>
-                <button type="submit" class="btn btn-primary btn-block" name="submit" value="submit">Login</button>
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary" name="submit" value="submit">Login</button>
+                </div>
+                <!-- Tampilkan pesan error di bawah form -->
+                <div class="text-danger mt-3 text-center">
+                    <?php if (!empty($error_login)) echo $error_login; ?>
+                </div>
             </form>
+        </div>
+        <div class="card-footer text-center text-muted">
         </div>
     </div>
 </div>

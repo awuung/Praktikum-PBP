@@ -9,7 +9,13 @@
 require_once('lib/db_login.php');
 
 // TODO 2: Buat variabel $id yang diambil dari query string parameter
-$id = $_GET['id'];
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+} else {
+    // Jika id tidak ada, alihkan pengguna ke halaman lain atau tampilkan pesan error
+    die("Error: ID parameter is missing.");
+}
+
 
 // Memeriksa apakah user belum menekan tombol submit
 if (!isset($_POST["submit"])) {
